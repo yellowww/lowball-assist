@@ -13,7 +13,7 @@
     <script src="https://bundle.run/buffer@6.0.3"></script>
   </head>
   <body>
-    <h1>lowball assist</h1>
+    <h1>lowball assist <a href="https://github.com/yellowww/lowball-assist" style="font-size:25px;" target="_blank">source</a></h1>
     <div id="apiKeyContainer" class="inputContainer" style="display:none;">
       enter your API key:
       <input id="apiInput" placeholder="api key">
@@ -45,7 +45,7 @@
     </div>
     <br>
     <div id="itemNameContainer"></div>
-    <div id="detailStatus"></div>
+    <div id="detailStatus" style="display:none;">Loading...</div>
     <div style="width:48vw;display:inline-block;vertical-align: top;">
       <div id="viewItemDetails" style="display:none;">   
         <div id="itemDetails" style="display:inline-block">
@@ -65,6 +65,7 @@
     <div style="width:48vw;background-color: rgb(100,100,100);display:none;text-align: center;vertical-align: top;" id="similarContainer">
       <div class="detailTitle" style="text-align: center;margin-top: 20px;">Similar items on the Auction House</div>
       <div id="similarLowballCost" class="detailTitle" style="color:rgb(0,0,120);"></div>
+      <div id="similarSellPrice" class="detailTitle" style="color:rgb(0,65,0);"></div>
       <div id="unreliableDisclaimer" style="display:none;"><div style="font-weight: 600;font-size: 30px; display: inline-block;">Unreliable: </div> There either are not enough similar items on the auction house, or it was not able to calibrate automaticly.</div>
       <div id="allSimilarItems" style="height:75vh;overflow: auto;text-align: center; width:100%;"></div>
     </div>
