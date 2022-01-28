@@ -87,7 +87,7 @@ var serverRequest = {
           noteWorthyProps.reforge=itemName.reforge;
           isArmor = itemName.armor;
         }
-        if(enchants)noteWorthyProps.enchants=enchants;
+        if(enchants)noteWorthyProps.enchants=noteWorthyProps.enchants.concat(enchants);
         var isStat = meta.checkIfIncludesStat(thisStat);
         if(isStat) {
           if(thisStat.includes('+')) {
@@ -95,10 +95,12 @@ var serverRequest = {
           } else {
             if(thisStat.includes("-")) var accStat = thisStat.split('-')[1].split('Ã')[0];
           }
+
+
           if(isStat == "Damage") {
             wHBPs = meta.getHotPotatoBooks(thisStat);
           }
-          if(isStat =="Health") {
+          if(isStat == "Health") {
             aHBPs = meta.getHotPotatoBooks(thisStat);
           }
            
@@ -114,7 +116,7 @@ var serverRequest = {
       } else {
         if(wHBPs) {
           noteWorthyProps.hotPotatoBooks = wHBPs[0];
-          noteWorthyProps.fumingPotatoBooks = wHBPs[1]/2;          
+          noteWorthyProps.fumingPotatoBooks = wHBPs[1];          
         }
 
       }

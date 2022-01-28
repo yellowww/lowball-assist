@@ -205,7 +205,7 @@ var similarItems = {
       var recombCost = 0;
       if(!parsedData.rarityUpgraded && processData.selectedItem.rarityUpgraded && processData.itemCosts.reforge != undefined) {
         recombCost = Math.round(bazaar.data.recomb);
-        differences.push("not recombed |"+(-1*meta.cleanUpNumber(Math.round(bazaar.data.recomb))));
+        differences.push("not recombed |"+(meta.cleanUpNumber(-1*recombCost)));
       }
       var refCost = 0;
       if(parsedData.reforge != processData.selectedItem.reforge) { 

@@ -58,6 +58,7 @@ var meta = {
     var enchantList = [];
     for(var i=0;i<meta.enchants.length;i++) {
       if(stat.includes(meta.enchants[i])) {
+
         var startingIndex = meta.findAllIndices(stat, meta.enchants[i]);
         var newString = stat.slice(startingIndex[0],stat.length-1);
         newString = newString.split("Ã")[0];

@@ -104,6 +104,7 @@ var processData = {
     },
     openItem: function(index) {
         this.selectedItem = this.allItemData[index];
+        document.getElementById("detailStatus").style.display = "block";
         document.getElementById("itemNameContainer").innerHTML = "";
         var startTime = new Date();startTime = startTime.getTime();
         ah.requestAllAuctions(function() {
@@ -251,7 +252,6 @@ var UI = {
             }
             averageScore/=averageAmount;
             processData.similarLowballPrice/=averageAmount;
-            console.log(averageScore)
             if(averageScore>processData.similarLowballPrice*0.4) {
                 document.getElementById("unreliableDisclaimer").style.display="block";
             }
