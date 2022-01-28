@@ -251,9 +251,13 @@ var UI = {
                 averageScore+=data[i].score;
             }
             averageScore/=averageAmount;
+            
             processData.similarLowballPrice/=averageAmount;
-            if(averageScore>processData.similarLowballPrice*0.4) {
+            if(averageScore>processData.similarLowballPrice*0.4 || isNaN(processData.similarLowballPrice)) {
                 document.getElementById("unreliableDisclaimer").style.display="block";
+                document.getElementById("similarLowballCost").style.display="none";
+            } else {
+                document.getElementById("similarSellPrice").innerHTML = "Sell item for: "+meta.cleanUpNumber(Math.round(processData.similarLowballPrice));
             }
         });
     },
